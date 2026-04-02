@@ -1,0 +1,146 @@
+-- Seed qualification master data
+insert into qualifications (slug, name, name_short, genre, ui_types, categories, system_prompt) values
+(
+  'kihon-joho',
+  '基本情報技術者',
+  '基本情報',
+  'it',
+  array['multiple_choice']::question_ui_type[],
+  array['コンピュータ科学基礎','アルゴリズムとデータ構造','ソフトウェア','ハードウェア','ネットワーク','セキュリティ','データベース','マネジメント系','ストラテジ系'],
+  'あなたは基本情報技術者試験の問題作成専門家です。IPAの試験シラバスに準拠した問題を作成します。'
+),
+(
+  'ouyo-joho',
+  '応用情報技術者',
+  '応用情報',
+  'it',
+  array['multiple_choice','multi_select']::question_ui_type[],
+  array['コンピュータ科学基礎','アルゴリズム','ソフトウェア','ハードウェア','ネットワーク','セキュリティ','データベース','システム設計・開発','マネジメント系','ストラテジ系'],
+  'あなたは応用情報技術者試験の問題作成専門家です。高度な技術理解を問う問題を作成します。'
+),
+(
+  'it-passport',
+  'ITパスポート',
+  'ITパスポート',
+  'it',
+  array['multiple_choice']::question_ui_type[],
+  array['ストラテジ系','マネジメント系','テクノロジ系','AIとデータ活用','セキュリティ'],
+  'あなたはITパスポート試験の問題作成専門家です。IT基礎知識・DXに関する問題を作成します。'
+),
+(
+  'boki-2',
+  '日商簿記2級',
+  '簿記2級',
+  'business',
+  array['multiple_choice','calculation']::question_ui_type[],
+  array['商業簿記','工業簿記','財務諸表','原価計算','仕訳'],
+  'あなたは日商簿記2級の問題作成専門家です。商業簿記・工業簿記・財務諸表・原価計算の問題を作成します。'
+),
+(
+  'boki-3',
+  '日商簿記3級',
+  '簿記3級',
+  'business',
+  array['multiple_choice','calculation']::question_ui_type[],
+  array['簿記の基礎','仕訳','財務諸表','勘定科目','決算整理'],
+  'あなたは日商簿記3級の問題作成専門家です。入門〜基礎レベルの簿記問題を作成します。'
+),
+(
+  'fp-2',
+  'FP技能士2級',
+  'FP2級',
+  'business',
+  array['multiple_choice','calculation']::question_ui_type[],
+  array['ライフプランニング','リスク管理（保険）','金融資産運用','タックスプランニング','不動産','相続・事業承継'],
+  'あなたはFP技能士2級の問題作成専門家です。ライフプランニング・税・投資・不動産・相続の問題を作成します。'
+),
+(
+  'fp-3',
+  'FP技能士3級',
+  'FP3級',
+  'business',
+  array['multiple_choice','true_false']::question_ui_type[],
+  array['ライフプランニング','リスク管理（保険）','金融資産運用','タックスプランニング','不動産','相続'],
+  'あなたはFP技能士3級の問題作成専門家です。基礎的なFP知識の問題を作成します。'
+),
+(
+  'eiken-3',
+  '英検3級',
+  '英検3級',
+  'language',
+  array['multiple_choice','fill_blank']::question_ui_type[],
+  array['語彙・熟語','文法','読解','会話文'],
+  'You are an expert in creating English proficiency test (Eiken Grade 3) questions.'
+),
+(
+  'eiken-pre2',
+  '英検準2級',
+  '英検準2級',
+  'language',
+  array['multiple_choice','fill_blank']::question_ui_type[],
+  array['語彙・熟語','文法','読解','会話文'],
+  'You are an expert in creating English proficiency test (Eiken Grade Pre-2) questions.'
+),
+(
+  'eiken-2',
+  '英検2級',
+  '英検2級',
+  'language',
+  array['multiple_choice','fill_blank']::question_ui_type[],
+  array['語彙・熟語','文法','読解','会話文'],
+  'You are an expert in creating English proficiency test (Eiken Grade 2) questions.'
+),
+(
+  'eiken-pre1',
+  '英検準1級',
+  '英検準1級',
+  'language',
+  array['multiple_choice','fill_blank']::question_ui_type[],
+  array['語彙・熟語','文法・語法','読解','会話文'],
+  'You are an expert in creating English proficiency test (Eiken Grade Pre-1) questions.'
+),
+(
+  'toeic',
+  'TOEIC L&R',
+  'TOEIC',
+  'language',
+  array['multiple_choice','fill_blank']::question_ui_type[],
+  array['Part 5: 文法・語彙','Part 6: 長文穴埋め','Part 7: 読解','ビジネス英語語彙'],
+  'You are an expert in creating TOEIC L&R questions. Create business English questions in TOEIC format.'
+),
+(
+  'kaigo-fukushi',
+  '介護福祉士',
+  '介護福祉士',
+  'medical',
+  array['multiple_choice']::question_ui_type[],
+  array['人間の尊厳と自立','人間関係とコミュニケーション','社会の理解','介護の基本','コミュニケーション技術','生活支援技術','介護過程','こころとからだのしくみ','医療的ケア','総合問題'],
+  'あなたは介護福祉士国家試験の問題作成専門家です。介護現場の実践的な問題を作成します。'
+),
+(
+  'touroku-hanbaisya',
+  '登録販売者',
+  '登録販売者',
+  'medical',
+  array['multiple_choice']::question_ui_type[],
+  array['医薬品に共通する特性と基本的な知識','人体の働きと医薬品','主な医薬品とその作用','薬事関係法規・制度','医薬品の適正使用・安全対策'],
+  'あなたは登録販売者試験の問題作成専門家です。一般用医薬品に関する問題を作成します。'
+),
+(
+  'takken',
+  '宅地建物取引士',
+  '宅建',
+  'legal',
+  array['multiple_choice','true_false']::question_ui_type[],
+  array['権利関係（民法等）','宅建業法','法令上の制限','税・その他'],
+  'あなたは宅地建物取引士試験の問題作成専門家です。不動産取引・宅建業法・民法の問題を作成します。'
+),
+(
+  'gyosei-shoshi',
+  '行政書士',
+  '行政書士',
+  'legal',
+  array['multiple_choice','true_false','multi_select']::question_ui_type[],
+  array['行政法','民法','憲法','商法・会社法','一般知識','行政手続法・審査請求'],
+  'あなたは行政書士試験の問題作成専門家です。行政法・民法・憲法・商法の高度な問題を作成します。'
+);
